@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  class="dark"
+      lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:fragment="parent(content, title, script)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title th:replace="${title}">SCM</title>
+
+    <link rel="stylesheet" th:href="@{/css/output.css}">
+
+   
+
+    <!-- font awesome -->
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+     integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+     crossorigin="anonymous" 
+     referrerpolicy="no-referrer" />
+</head>
+
+<!-- use this when need dark mode : class="dark:bg-gray-950 dark:text-white" -->
+<body class="dark:bg-gray-950 dark:text-white">
+
+<div th:replace="~{navbar :: navbar}"></div>
+
+<!-- main content -->
+<div class="p-4 ">
+    <th:block th:replace="${content}"></th:block>
+</div>
+
+<footer class="p-4">
+    Footer: Learning spring boot
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+
+<script data-th-src="@{'/js/script.js'}"></script>
+
+
+<th:block th:replace="${script}"></th:block>
+
+</body>
+</html>

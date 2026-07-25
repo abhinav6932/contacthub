@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: parent(~{::content}, ~{::title}, ~{::pageScript})}">
+
+<head>
+    <title>Login Page</title>
+</head>
+
+<body>
+
+<th:block th:fragment="content">
+
+    <h1 class="text-4xl font-bold">
+        Welcome to login page
+    </h1>
+
+    <p class="mt-4 text-lg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Autem, aliquid.
+    </p>
+
+</th:block>
+
+
+<th:block th:fragment="pageScript">
+
+    <script>
+        console.log("This is the Login Page script.");
+    </script>
+
+</th:block>
+
+</body>
+</html>
