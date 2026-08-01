@@ -9,13 +9,14 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-600: oklch(57.7% 0.245 27.325);
     --color-orange-700: oklch(55.3% 0.195 38.402);
     --color-orange-800: oklch(47% 0.157 37.304);
-    --color-yellow-200: oklch(94.5% 0.129 101.54);
-    --color-yellow-700: oklch(55.4% 0.135 66.442);
-    --color-yellow-900: oklch(42.1% 0.095 57.708);
+    --color-green-50: oklch(98.2% 0.018 155.826);
+    --color-green-300: oklch(87.1% 0.15 154.449);
+    --color-green-800: oklch(44.8% 0.119 151.328);
     --color-teal-900: oklch(38.6% 0.063 188.416);
-    --color-teal-950: oklch(27.7% 0.046 192.524);
+    --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-700: oklch(48.8% 0.243 264.376);
     --color-blue-800: oklch(42.4% 0.199 265.638);
@@ -25,7 +26,6 @@
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
@@ -34,7 +34,6 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --breakpoint-xl: 80rem;
-    --container-sm: 24rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
@@ -224,29 +223,20 @@
   .col-span-4 {
     grid-column: span 4 / span 4;
   }
-  .col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-  .col-span-8 {
-    grid-column: span 8 / span 8;
-  }
-  .col-span-11 {
-    grid-column: span 11 / span 11;
-  }
   .col-span-12 {
     grid-column: span 12 / span 12;
-  }
-  .col-end-4 {
-    grid-column-end: 4;
   }
   .mx-auto {
     margin-inline: auto;
   }
+  .me-3 {
+    margin-inline-end: calc(var(--spacing) * 3);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
-  }
-  .mt-5 {
-    margin-top: calc(var(--spacing) * 5);
   }
   .apexcharts-canvas .apexcharts-tooltip {
     background-color: primary !important;
@@ -463,20 +453,14 @@
     border-color: var(--color-light) !important;
     color: var(--color-heading) !important;
   }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
-  .mb-2\.5 {
-    margin-bottom: calc(var(--spacing) * 2.5);
-  }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
-  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
-  }
-  .mb-5 {
-    margin-bottom: calc(var(--spacing) * 5);
   }
   .apexcharts-canvas .apexcharts-xaxistooltip {
     color: var(--color-body) !important;
@@ -522,11 +506,17 @@
   .hidden {
     display: none;
   }
+  .inline {
+    display: inline;
+  }
   .inline-flex {
     display: inline-flex;
   }
   .table {
     display: table;
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
   }
   .h-6 {
     height: calc(var(--spacing) * 6);
@@ -536,6 +526,9 @@
   }
   .h-9 {
     height: calc(var(--spacing) * 9);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
@@ -549,11 +542,11 @@
   .max-w-screen-xl {
     max-width: var(--breakpoint-xl);
   }
-  .max-w-sm {
-    max-width: var(--container-sm);
-  }
   .flex-shrink {
     flex-shrink: 1;
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -611,25 +604,9 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
   .border-t-8 {
     border-top-style: var(--tw-border-style);
     border-top-width: 8px;
-  }
-  .border-t-\[7\] {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 7;
-  }
-  .border-t-\[7px\] {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 7px;
-  }
-  .border-b {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
   }
   .dark .apexcharts-canvas .apexcharts-tooltip {
     background-color: var(--color-neutral-secondary-medium) !important;
@@ -677,14 +654,8 @@
   .dark .apexcharts-ycrosshairs {
     stroke: var(--color-default) !important;
   }
-  .border-gray-200 {
-    border-color: var(--color-gray-200);
-  }
   .border-gray-300 {
     border-color: var(--color-gray-300);
-  }
-  .border-gray-700 {
-    border-color: var(--color-gray-700);
   }
   .border-red-500 {
     border-color: var(--color-red-500);
@@ -717,9 +688,6 @@
   }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
-  }
-  .bg-gray-100 {
-    background-color: var(--color-gray-100);
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
@@ -801,20 +769,29 @@
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
   }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
-  }
-  .p-3\.5 {
-    padding: calc(var(--spacing) * 3.5);
-  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
+  .px-1 {
+    padding-inline: var(--spacing);
+  }
+  .px-1\.5 {
+    padding-inline: calc(var(--spacing) * 1.5);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
@@ -885,10 +862,6 @@
     --tw-leading: calc(var(--spacing) * 5);
     line-height: calc(var(--spacing) * 5);
   }
-  .leading-8 {
-    --tw-leading: calc(var(--spacing) * 8);
-    line-height: calc(var(--spacing) * 8);
-  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -915,11 +888,11 @@
   .text-gray-400 {
     color: var(--color-gray-400);
   }
-  .text-gray-700 {
-    color: var(--color-gray-700);
-  }
   .text-gray-900 {
     color: var(--color-gray-900);
+  }
+  .text-red-600 {
+    color: var(--color-red-600);
   }
   .text-white {
     color: var(--color-white);
@@ -946,23 +919,11 @@
     .hover\:bg-gray-100:hover {
       background-color: var(--color-gray-100);
     }
-    .hover\:bg-gray-300:hover {
-      background-color: var(--color-gray-300);
-    }
-    .hover\:bg-gray-500:hover {
-      background-color: var(--color-gray-500);
-    }
     .hover\:bg-gray-700:hover {
       background-color: var(--color-gray-700);
     }
-    .hover\:bg-gray-800:hover {
-      background-color: var(--color-gray-800);
-    }
     .hover\:bg-gray-900:hover {
       background-color: var(--color-gray-900);
-    }
-    .hover\:bg-gray-950:hover {
-      background-color: var(--color-gray-950);
     }
     .hover\:bg-orange-700:hover {
       background-color: var(--color-orange-700);
@@ -995,9 +956,6 @@
     }
     .md\:col-span-2 {
       grid-column: span 2 / span 2;
-    }
-    .md\:col-span-4 {
-      grid-column: span 4 / span 4;
     }
     .md\:col-span-8 {
       grid-column: span 8 / span 8;
@@ -1044,9 +1002,6 @@
     .lg\:col-span-3 {
       grid-column: span 3 / span 3;
     }
-    .lg\:col-span-4 {
-      grid-column: span 4 / span 4;
-    }
     .lg\:col-span-6 {
       grid-column: span 6 / span 6;
     }
@@ -1062,26 +1017,8 @@
   .dark\:border-gray-600:where(.dark, .dark *) {
     border-color: var(--color-gray-600);
   }
-  .dark\:border-gray-700:where(.dark, .dark *) {
-    border-color: var(--color-gray-700);
-  }
-  .dark\:border-yellow-200:where(.dark, .dark *) {
-    border-color: var(--color-yellow-200);
-  }
-  .dark\:border-yellow-700:where(.dark, .dark *) {
-    border-color: var(--color-yellow-700);
-  }
-  .dark\:border-yellow-900:where(.dark, .dark *) {
-    border-color: var(--color-yellow-900);
-  }
   .dark\:border-y-teal-900:where(.dark, .dark *) {
     border-block-color: var(--color-teal-900);
-  }
-  .dark\:border-y-teal-950:where(.dark, .dark *) {
-    border-block-color: var(--color-teal-950);
-  }
-  .dark\:bg-blue-500:where(.dark, .dark *) {
-    background-color: var(--color-blue-500);
   }
   .dark\:bg-blue-700:where(.dark, .dark *) {
     background-color: var(--color-blue-700);

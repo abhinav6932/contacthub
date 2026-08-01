@@ -3,6 +3,8 @@ package com.scm.contacthub.entities;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -42,7 +44,8 @@ public class User {
     private boolean phoneVerified = false;
 
     // sign up with self, sign up with google, sign up with github
-
+    
+    @Enumerated(value = EnumType.STRING)
     private Providers provider = Providers.SELF;
     private String providerUserId;
 
